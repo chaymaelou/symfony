@@ -2,7 +2,8 @@
 
 namespace   App\Controller;
 
-
+use App\Entity\Gite;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,12 +16,20 @@ class HomeController extends AbstractController {
 
 
 
-public function index()
+public function index(ManagerRegistry $doctrine)
 {
+
+$repository = $doctrine->getRepository(Gite::class);
+$gites = $repository->findAll();
+dump($gites);
+
+
+
 return $this->render("home/index.html.twig", [
     "title" => "Bienvenue",
     "message" => " my first page " ,
-    "menu" => "home"
+    "menu" => "home",
+    "gites" => $gites
 ]);
 }
 

@@ -1,0 +1,55 @@
+ {% extends "dashboard.html.twig" %}
+
+
+{% block body %}
+  <h1> GESTION DE DONNEE</h1>
+
+<div class="form-group">
+
+<a href="#" class="btn btn-success">Créer un gite</a>
+
+
+</div>
+
+
+
+
+
+
+<table class="table table-striped">
+<thead>
+        <td>#</td>
+        <td>nom du gite</td>
+        <td> Action </td>
+</thead>
+<tbody>
+ {% for gite in gites %}
+    <tr>
+    <td>{{ gite.id }}</td>
+    <td>{{ gite.nom }}</td>
+    <td>
+    <button>Editer</button>
+    <button>Supprimer</button>
+    </td>
+    
+    
+    
+    </tr> 
+ {% endfor %}
+
+
+</tbody>
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+{% endblock %}
