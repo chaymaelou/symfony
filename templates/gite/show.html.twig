@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    {{ gite.nom }}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+<div class="col-md-12">
+<div class="card">
+  <div class="card-body">
+  {{ gite.nom }}
+  </div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-10">
+
+{{ gite.description}}
+
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-6">
+<table class="table">
+<tr>
+  <th>Surface</th>
+  <td>{{ gite.surface }}m²</td>
+</tr>
+<tr>
+  <th>Chambre</th>
+  <td>{{ gite.Chambre }}</td>
+</tr>
+<tr>
+  <th>Couchage</th>
+  <td>{{ gite.Couchage }}</td>
+</tr>
+</table>
+</div>
+<div class="col-md-6">
+
+</div>
+</div>
+{% endblock %}
+
+
