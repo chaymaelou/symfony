@@ -32,14 +32,30 @@
         <li class="nav-item">
           <a class="nav-link" {% if menu is defined and menu == 'contact' %} active {% endif %} href="{{ path('contact')}}">contact</a>
         </li>
+        {% if is_granted("ROLE_ADMIN") %}
           <li class="nav-item">
           <a class="nav-link" {% if menu is defined and menu == 'admin' %} active {% endif %} href="{{ path('admin_index')}}">Admin</a>
         </li>
+        {% endif %}
       </ul>
       
     </div>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+							</li>
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_login') }}">Login</a>
+							</li>
+						{% endif %}
+      </ul>
   </div>
+
 </nav>
+
 <main class="container">
         {% block body %}{% endblock %}
 </main>
