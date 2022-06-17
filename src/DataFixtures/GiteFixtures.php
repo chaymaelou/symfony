@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+
 use App\Entity\Gite;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -22,7 +23,7 @@ class GiteFixtures extends Fixture
      $manager->persist($gite);
 
        }
-
+     
         $manager->flush();
     }
 }
