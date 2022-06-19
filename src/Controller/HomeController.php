@@ -15,6 +15,8 @@ class HomeController extends AbstractController {
 
 /**
  * @Route("/", name="home") 
+ * @param ManagerRegistry $doctrine
+ * @return void
  */
 
 
@@ -30,7 +32,7 @@ $form->handleRequest($request);
 
 /** @var GiteRepository $repository  */
 $repository = $doctrine->getRepository(Gite::class);
-$gites = $repository->findAll($search);
+$gites = $repository->findAll();
 
 if($form->isSubmitted()){
    $gites = $repository->findGiteSearch($search);

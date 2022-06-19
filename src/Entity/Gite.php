@@ -73,9 +73,11 @@ class Gite
      */
     private $equipements;
 
+   
     public function __construct()
     {
         $this->equipements = new ArrayCollection();
+        
     }
 
     public function getId(): ?int

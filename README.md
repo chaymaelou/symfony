@@ -16,7 +16,7 @@ La base de donnée:
 - rajouter des gites dans la BDD
 -  utiliser les fixture
 
-Page admin :
+Page admin 
 - creation des nouveau gites 
 - editer/delet/supprimer (sécuriser les pages )
 
@@ -28,24 +28,28 @@ Authentification:
 Ajouter les contraintes 
 
 
+ Relation 
+
+- Ajouter une relation entre les équipements et les gites
+
+
+Recherche
+
+- Ajouter la possibilité de recherche des gites avec les critères d’équipements
 
 
 ### A faire :
 
 1-Relation 
 
-- Ajouter une relation entre les équipements et les gites
 
 - Ajouter un propriétaire aux Gites
  
 
-2-Recherche
 
-- Ajouter la possibilité de recherche des gites avec les critères d’équipements
+2-partie mailer
 
-3-partie mailer
-
-4-contacter les propriéraires des gites
+3-contacter les propriéraires des gites
 
 
 

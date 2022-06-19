@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block body %}
+
  <h1> Editer  un  gite</h1>  
+ 
 {{ form_start(formGite) }}
 <div class="row">
 <div class="col-md-6">
@@ -15,30 +17,35 @@
 </div>
 </div>
 <div class="row">
-<div class="col-md-3">
+<div class="col-md-4">
 
 {{ form_row(formGite.surface) }}
 
+
 </div>
-</div>
-<div class="row">
-<div class="col-md-3">
+
+<div class="col-md-4">
 
 {{ form_row(formGite.chambre) }}
 
+
 </div>
-</div>
-<div class="row">
-<div class="col-md-3">
+
+<div class="col-md-4">
 
 {{ form_row(formGite.couchage) }}
 
 </div>
 </div>
 <div class="row">
-<div class="col-md-12">
+<div class="col-md-6">
 
 {{ form_row(formGite.description) }}
+
+</div>
+<div class="col-md-6">
+
+{{ form_row(formGite.equipements) }}
 
 </div>
 </div>

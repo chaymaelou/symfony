@@ -69,6 +69,28 @@ public function findGiteSearch(GiteSearch $search)
           ->andwhere("g.couchage >= :minCouchage")
           ->setParameter('minCouchage', $search->getMinCouchage());
  }
+
+ if($search->getEquipement()->count() > 0){
+    $e = 0;
+    foreach($search->getEquipement() as $e => $equipement) {
+        $e++;
+        $query = $query
+    ->andWhere(":equipement$e MEMBER OF g.equipements")
+    ->setParameter("equipement$e", $equipement);       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
     $query = $query
        ->orderBy("g.id", "ASC")
        ->getQuery()
