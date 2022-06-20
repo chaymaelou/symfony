@@ -37,6 +37,8 @@ Recherche
 
 - Ajouter la possibilité de recherche des gites avec les critères d’équipements
 
+partie mailer
+
 
 ### A faire :
 
@@ -44,12 +46,8 @@ Recherche
 
 
 - Ajouter un propriétaire aux Gites
- 
 
-
-2-partie mailer
-
-3-contacter les propriéraires des gites
+2-contacter les propriéraires des gites
 
 
 
