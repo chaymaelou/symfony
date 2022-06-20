@@ -2,12 +2,16 @@
 
 namespace   App\Controller;
 
+use App\Entity\Contact;
 use App\Entity\Gite;
 use App\Entity\GiteSearch;
+use App\Form\ContactType;
 use App\Form\GiteSearchType;
+use App\Notification\ContactNotification;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController {
@@ -50,9 +54,22 @@ return $this->render("home/index.html.twig", [
 /**
  * @Route("/contact", name="contact")
  */
-public function contact(){
+public function contact(Request $request, ContactNotification $notification)
+{
+  $contact = new Contact();
+  $form = $this->createForm(ContactType::class, $contact);
+  $form->handleRequest($request);
+
+if($form->isSubmitted() && $form->isValid())
+{
+
+  $notification->contactNotify($contact);
+  $this->addFlash('success', 'Email envoyé!');
+}
+
     return $this->render("home/contact.html.twig" , [
-        "menu" => "contact"
+        "menu" => "contact",
+        "form" => $form->createView()
     ]);
 }
 
